@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+form{
+	border: 1px solid #000;
+	padding: 2px;
+	width: 92px;
+}
+[type="text"]{
+	width: 89px;
+	text-align: right;
+	margin: auto;
+}
+[type="button"]{
+	width: 23px;
+	margin: auto;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+document.write("<form>");
+	var zz=["7","8","9","+","4","5","6","-","1","2","3","*","0","C","=","/"];
+	var ge=["z(7)","z(8)","z(9)","ram('+')","z(4)","z(5)","z(6)","ram('-')","z(1)","z(2)","z(3)","ram('*')","z(0)","mm()","end()","ram('/')"];
+	document.write("<input id=\"aa\" type=\"text\" readonly /><br />");
+	for(var q=0;q<=15;q++){
+		document.write("<input type=\"button\" value="+zz[q]+" onclick=\""+ge[q]+"\" />");
+		if((q+1)%4==0) document.write("<br />");
+	}
+document.write("</form>");
+
+	var i,u,g,ed,js=0;
+	function z(o){
+		if(js==0){
+			i=$("#aa").val()+o;
+			$("#aa").val(i);
+		}else if(js==1){
+			u=$("#aa").val()+o;
+			$("#aa").val(u);
+		}
+	}
+	function ram(p){
+		$("#aa").val("");
+		if(g=="+","-","*","/" && u!=null && ed==0){
+			eval("i=parseFloat(i)"+g+"parseFloat(u);");
+			}else if(js==0){
+				js=1;}
+		ed=0;
+		g=p;
+	}
+	function end(){
+		if(g=="+","-","*","/" && u!=null){
+			eval("i=parseFloat(i)"+g+"parseFloat(u);");
+			js=0;
+			}
+		ed=1;
+		$("#aa").val(i);
+	}
+	function mm(){
+		i=null;u=null;js=0;g=null;
+		$("#aa").val(i);
+	}
+</script>
+</head>
+<body>
+</body>
+</html><!--Copyright by Xusmochizuki>
