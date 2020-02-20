@@ -1,0 +1,29 @@
+{
+    "name": "贴吧屏蔽器",
+    "manifest_version": 2,
+    "version": "1.0",
+    "author":"Thexu",
+    "description": "快速屏蔽贴吧网页版中不想看到的人和帖子 ©copyright by Thexu",
+    "background":
+    {
+      "scripts": ["back.js"]
+    },
+    "icons":{
+      "16":"icon.png",
+      "48":"icon.png",
+      "128":"icon.png"
+    },
+    "browser_action": {
+      "default_icon": "y.png",
+      "default_popup": "addlist.html"
+    },
+    "permissions": [
+      "storage"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["http://tieba.baidu.com/*","https://tieba.baidu.com/*"],
+        "js": ["main.js"]
+      }
+    ]
+  }

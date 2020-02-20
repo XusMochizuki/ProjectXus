@@ -1,0 +1,27 @@
+body{
+    background-color: #222;
+    width: 400px;
+    height: 400px;
+}
+.in{
+    width: 100%;
+    border-color: #f50;
+    color:#ccc;
+    background-color: #444;
+    margin-bottom: 5%;
+}
+.btn{
+    background-color: #555;
+    border-color: #999;
+    color: #fff;
+}
+#adduser{
+    background-color: #17d;
+    border-color: #128;
+    float:left;
+}
+#addblog{
+    background-color: #5c5;
+    border-color: #262;
+    float: right;
+}
